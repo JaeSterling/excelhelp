@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Data Viewer</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        input { width: 100%; padding: 8px; margin-bottom: 10px; }
+    </style>
+    <script>
+        function searchTable() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let rows = document.querySelectorAll("tbody tr");
+            rows.forEach(row => {
+                row.style.display = row.innerText.toLowerCase().includes(input) ? "" : "none";
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Excel Data Viewer</h2>
+    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for data...">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sales 2024</th>
+                <th>Goal 2024</th>
+                <th>Sales Region</th>
+                <th>Bonus</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Johnson</td><td>$93,654</td><td>$125,123</td><td>West</td><td>$0</td></tr>
+            <tr><td>Robertson</td><td>$87,957</td><td>$91,926</td><td>South</td><td>$0</td></tr>
+            <tr><td>Myers</td><td>$105,087</td><td>$98,230</td><td>Midwest</td><td>$5,254</td></tr>
+            <tr><td>Stith</td><td>$110,709</td><td>$97,104</td><td>West</td><td>$11,071</td></tr>
+            <tr><td>Coleman</td><td>$112,268</td><td>$110,000</td><td>South</td><td>$8,981</td></tr>
+            <tr><td>Green</td><td>$84,000</td><td>$112,236</td><td>Midwest</td><td>$0</td></tr>
+            <tr><td>Adams</td><td>$105,195</td><td>$98,518</td><td>West</td><td>$10,520</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Download PDF Files</h2>
+    <ul>
+        <li><a href="Excel Mixed Functions PDF File 1.pdf" target="_blank">Download Excel Mixed Functions PDF File 1</a></li>
+        <li><a href="Excel Mixed Functions PDF File 2.pdf" target="_blank">Download Excel Mixed Functions PDF File 2</a></li>
+    </ul>
+</body>
+</html>
